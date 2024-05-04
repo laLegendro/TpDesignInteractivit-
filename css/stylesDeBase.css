@@ -1,0 +1,121 @@
+/* Polices qui seront utilisées */
+@font-face {
+  font-family: "Titre";
+  src: url("../polices/Titre.otf");
+}
+
+/* Palette de couleurs */
+/*je ne sais pas trop si je vais toutes les prendre*/
+:root {
+  --gris-pale: #ebe8e4;
+  --gris-fonce: #c3bab6;
+  --bleue-pale: #94bbbb;
+  --bleue-fonce: #304d57;
+  --orange: #e47600;
+  --jaune-fonce: #f7bd02;
+}
+
+/* Normalization supplémentaire*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  /*faeque, si je fais display flex, tout devient fucké sur le site, par conséquent
+je ne peux pas centrer mon header... alors je vais tricher et mettre un padding
+gauche au header*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  font-family: "Oswald", sans-serif;
+  font-weight: 200;
+  font-size: clamp(14px, 0.75rem + 1vw, 22px);
+  background-image: url(../images/imageArrierePlan.jpeg);
+
+  background-repeat: no-repeat;
+}
+
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  /* color: var(--bleue-fonce);*/
+  font-size: 200%;
+  padding-bottom: 2rem;
+
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animationTitres 2s linear infinite;
+  display: inline-block;
+}
+
+@keyframes animationTitres {
+  to {
+    background-position: 200% center;
+  }
+}
+
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
+  font-size: 150%;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animationTitres 2s linear infinite backwards;
+  display: inline-block;
+}
+
+h3 span {
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
+  font-size: 150%;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animationTitres 2s linear infinite backwards;
+  display: inline-block;
+}

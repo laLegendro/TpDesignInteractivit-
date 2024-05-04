@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/stylesDeBase.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+
+    <!-- Font awesome pour les icônes du footer -->
+    <script
+      src="https://kit.fontawesome.com/f4dd89e5b2.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Intégration de la police Google Material icônes -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Intégration de la police Google Oswald pour texte courant -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&family=Roboto:ital,wght@0,100;0,300;0,500;0,900;1,100;1,300&family=Teko:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>TpFinal Alejandro Yanez - Martin Lavallée</title>
+  </head>
+  <body>
+    <header>
+      <!-- Mon menu burger -->
+      <div id="menu">
+        <div id="partieHaut">
+          <img src="images/LogoMlBlanc.png" width="100px" alt="Logo ML" />
+          <input type="checkbox" id="menuBurger" />
+          <label for="menuBurger" class="boutonBurger">
+            <span class="material-icons">menu</span>
+          </label>
+
+          <!-- Ma navigation -->
+          <nav>
+            <ul>
+              <li><a href="#">QUI SOMMES-NOUS?</a></li>
+              <li><a href="#">NOS SERVICES</a></li>
+              <li><a href="#">NOS PROJETS</a></li>
+              <li><a href="#">CONTACT</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- la div qui va contenir la video -->
+        <div class="video">
+          <video class="arrierePlanVideo" autoplay muted loop>
+            <source
+              src="images/MartinLavalleeMoyenEcran.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+
+        <!-- la div qui va contenir la video -->
+        <div class="video">
+          <video class="arrierePlanVideo" autoplay muted loop>
+            <source
+              src="images/MartinLavalleeGrandEcran.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+
+        <!-- Mon h1 -->
+        <h1>
+          <div>CONSTRUCTIONS</div>
+          <div>MARTIN LAVALLÉE</div>
+        </h1>
+      </div>
+    </header>
+
+    <main>
+      <!-- Avant de mettre le h2, le h3 et les 3xp dans une balise div,
+      cétait dans une section. même chose pour le footer...
+    Mais lorsque je voulais mettre la section
+    en flex, c'était non responsive et même l'inspecteur ne me montrait pas   que c'était en flex. du moment que j'ai mis le tout dans une balise div, 
+     le flex a fonctionné et dans l'inspecteur c'était indiqué flex. WHY THO -->
+
+      <div class="titresSection">
+        <h2>DE L'ÉCOUTE AU CONSEIL!</h2>
+        <h3>NOUS SOMMES LÀ POUR VOUS!</h3>
+      </div>
+      <div class="section">
+        <div class="paragraphesSection">
+          <p>
+            Les Constructions Martin Lavallée, présentes à Montréal depuis 15
+            ans, se démarquent en tant que compagnie solide et fiable dans le
+            domaine de la construction. Forte d'une expérience de longue date,
+            l'entreprise s'est forgée une réputation d'excellence et d'expertise
+            dans la réalisation de projets variés.
+          </p>
+
+          <p>
+            Spécialisée dans la construction résidentielle et commerciale, Les
+            Constructions Martin Lavallée s'engagent à offrir des services de
+            qualité, alliant innovation, précision, et un souci constant de la
+            satisfaction du client. Grâce à une équipe expérimentée et dévouée,
+            la compagnie s'adapte aux besoins spécifiques de chaque projet,
+            assurant ainsi des résultats qui dépassent les attentes.
+          </p>
+
+          <p>
+            Que ce soit pour la création de nouveaux espaces résidentiels, la
+            rénovation de bâtiments existants ou la réalisation de projets
+            commerciaux, Les Constructions Martin Lavallée mettent l'accent sur
+            la qualité de la construction, le respect des délais, et l'attention
+            portée aux détails. Avec 15 années d'expertise à leur actif, ils
+            demeurent un partenaire de confiance pour concrétiser vos idées et
+            donner vie à vos projets de construction et de rénovation.
+          </p>
+        </div>
+      </div>
+      <h2>NOTRE FAMILLE!</h2>
+      <div id="equipe">
+        <div class="personnel">
+          <div class="imageNom">
+            <img
+              src="images/MartinLavallee.jpg"
+              width="200px"
+              alt="Martin Lavallée"
+            />
+            <h3>
+              <span>MARTIN</span>
+            </br>
+             LAVALLÉE 
+            </br>
+            <span>PROPRIO</span>
+          </h3>
+          </div>
+
+          <div class="personnelTexte">
+            <p>
+              Martin Lavallée est connu pour son dévouement envers l'excellence,
+              ce qui transparaît dans chaque projet qu'il entreprend. Avec son
+              esprit novateur, il est toujours à l'affût des dernières
+              technologies et tendances de l'industrie de la construction.
+            </p>
+          </div>
+        </div>
+
+        <div class="personnel">
+          <div class="imageNom">
+            <img
+              src="images/MarcoBeaubien.jpg"
+              width="200px"
+              alt="Marco Beaubien"
+            />
+            <h3>
+              <span>MARCO</span>
+            </br>
+             BEAUBIEN 
+            </br>
+            <span>PLOMBIER</span>
+          </h3>
+          </div>
+
+          <div class="personnelTexte">
+            <p>
+              Parmis nous depuis 5 ans, Marco est bien plus qu'un simple
+              plombier; c'est un artiste de la tuyauterie et un maestro des
+              canalisations.Marco ne se contente pas de réparer les fuites; il
+              les transforme en véritables œuvres d'art fonctionnelles. Marco,
+              on l'aime.
+            </p>
+          </div>
+        </div>
+
+        <div class="personnel">
+          <div class="imageNom">
+            <img
+              src="images/MarineBrunelle.jpg"
+              width="200px"
+              alt="Martin Lavallée"
+            />
+            <h3>
+              <span>MARINE</span>
+            </br>
+             BRUNELLE
+            </br>
+             <span>SÉCRETAIRE</span>
+            </h3>
+          </div>
+
+          <div class="personnelTexte">
+            <p>
+              Marine incarne l'efficacité et l'élégance dans le monde
+              professionnel en tant que secrétaire. Avec son sourire accueillant
+              et son attitude calme, elle est la pierre angulaire qui maintient
+              l'ensemble du bureau en ordre. Marine gère les tâches
+              administratives avec une précision et une organisation
+              impeccables.
+            </p>
+          </div>
+        </div>
+
+        <div class="personnel">
+          <div class="imageNom">
+            <img
+              src="images/BenitoCamelo.jpg"
+              width="200px"
+              alt="Martin Lavallée"
+            />
+            <h3>
+              <span>BENITO</span>
+              </br>
+               CASTRO
+               </br>
+               <span>MENUISIER</span>
+              </h3>
+          </div>
+
+          <div class="personnelTexte">
+            <p>
+              Benito incarne l'artisanat avec passion et compétence en tant que
+              menuisier. Avec des mains constamment marquées par le travail du
+              bois, Benito respire la créativité et l'engagement. Son atelier
+              est un sanctuaire du bois, empli de l'arôme apaisant du pin, du
+              chêne et du cèdre. Benito est le meilleur.
+            </p>
+          </div>
+        </div>
+        <div class="personnel">
+          <div class="imageNom">
+            <img
+              src="images/PriyankaSingh.jpg"
+              width="200px"
+              alt="Martin Lavallée"
+            />
+            <h3>
+              <span>SITA</span>
+              </br>
+               SINGH
+              </br>
+                <span>ÉLECTRICIENNE</span>
+              </h3>
+          </div>
+
+          <div class="personnelTexte">
+            <p>
+              Priyanka incarne l'énergie et la détermination en tant
+              qu'électricienne. Avec ses yeux étincelants reflétant sa passion
+              pour son métier, Priyanka manie les câbles et les fils électriques
+              avec une habileté remarquable. Toujours équipée de sa boîte à
+              outils et prête à relever n'importe quel défi, elle apporte une
+              touche de dynamisme à chaque projet.
+            </p>
+          </div>
+        </div>
+        <div class="personnel">
+          <div class="imageNom">
+            <img src="images/ashaImani.jpg" width="210px" alt="Asha Imani" />
+            <h3>
+              <span>ASHA</span>
+            </br> 
+            IMANI 
+            <span>SUPERVISEUSE</span>
+          </br>
+          </h3>
+          </div>
+
+          <div class="personnelTexte">
+            <p>
+              Elle excelle dans l'utilisation de technologies de pointe pour
+              élaborer des plans qui repoussent les limites de l'architecture
+              contemporaine. Toujours en quête de solutions durables, Asha
+              veille à ce que chaque projet intègre des pratiques respectueuses
+              de l'environnement. Son esprit visionnaire et sa capacité à
+              fusionner la fonctionnalité avec l'esthétique font d'elle une
+              force motrice dans l'évolution du paysage urbain.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="footer">
+      <h3>
+        <div>VENEZ JOINDRE NOTRE FAMILLE!</div>
+        <div>APPLIQUEZ DÈS MAINTENANT</div>
+      </h3>
+
+      <div class="footerBas">
+        <div>
+          2046 av valois<br />
+          Montreal, Quebec
+        </div>
+        <div>4383984317</div>
+
+        <a href="https://www.behance.net/alex_ydr3dc3">
+          <i class="fa-brands fa-square-behance"></i>
+        </a>
+        <a href="https://www.instagram.com/la_legendro/">
+          <i class="fa-brands fa-square-instagram"></i>
+        </a>
+      </div>
+    </div>
+    <script src="js/ml.js"></script>
+  </body>
+</html>

@@ -1,0 +1,756 @@
+/*
+à noter, certains commentaires sont pour moi même. quand je vais revenir
+dessus pour retravailler dessus pendant les vacances et me souvenir*/
+
+header {
+  /*tailles*/
+  width: 100%; /*100% de son élément parent, étant body à 100vw*/
+  max-height: 650px; /* la hauteur exacte de la video en arrière plan*/
+  padding-left: 10%; /* centrer en trichant*/
+
+  /*propriétés flex*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 auto;
+
+  /*autres*/
+  position: relative; /* par rapport à ses enfants nav et .video  */
+  overflow: hidden;
+  box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.5);
+  border-radius: 0 0 20% 20%;
+}
+
+/******************************** videoarrierePlan *************************/
+.video {
+  position: absolute; /* par rapport à son parent header */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* pour la rendre en arrière plan  */
+}
+
+.video:last-of-type {
+  display: none; /* je cache la video plus grande */
+}
+
+/******************************** DIV DANS HEADER CONTENANT *************************/
+/*j'aurais pu juste mettre tout dans header, mais les balises traditionnelles
+comme main, header, section, footer, je ne sais pas pourquoi mais ne réponds pas
+au flex que je leur donne... */
+
+#menu {
+  /* à noter: lorsque flex, il faut donner un width et un height
+  sinon rien ne se placera correctement*/
+  width: 90%; /* de son élément parent étant header ayant 100vw*/
+  height: 82vh; /* de son élément parent étant header ayant*/
+
+  /*propriétés flex*/
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/******************************** div contenant *************************/
+/******************************** #img logo & boutonBurger *************************/
+#partieHaut {
+  width: 100%;
+  margin-top: 1rem;
+
+  /*propriétés flex*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/******************* Le logo ****************/
+
+#menu img {
+  transition: scale 1s ease;
+  cursor: pointer; /*pour montrer que c'est clickable*/
+}
+
+/******************* Le Menu burger et le checkbox ****************/
+
+header #menu .boutonBurger {
+  transition: rotate 1s ease;
+}
+
+header #menu .boutonBurger span {
+  font-size: 400%; /*pour que le menu burger soit plus gros*/
+  /*le bouton burger en tant que tel*/
+  color: var(--gris-pale);
+  cursor: pointer;
+}
+
+#menu #menuBurger {
+  display: none; /*je cache la casse à cocher*/
+}
+
+#menu #menuBurger:checked + label {
+  rotate: 90deg; /*je veux que le menu burger tourne de 90 deg*/
+}
+
+#menuBurger:checked ~ nav {
+  /* lorsque checked, je veux que le menu apparaisse*/
+  transition: opacity 1s ease, translate 1s ease;
+  opacity: 1;
+  translate: -7vw 0;
+}
+
+/******************************** NAV *************************/
+
+nav {
+  width: 90%; /*faut laisser un peu de place au logo là*/
+  position: absolute; /*par rapport au menu burger i guess*/
+  top: 85px;
+  right: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
+
+  /*propriétés flex */
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  flex: 0 1 auto;
+
+  /* lorsque checked encore, je veux que le menu dispparaisse*/
+  /*il doit aussi faire un translate, car avec l'opacité, l'objet
+  est encore là et on peut clicker dessus*/
+  opacity: 0;
+  translate: 50vw 0;
+  transition: opacity 1s ease, translate 1s ease;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+nav ul li a {
+  color: var(--gris-pale);
+  text-decoration: none;
+  font-size: 140%;
+  transition: color 1s ease, font-size, 1s ease;
+  cursor: pointer;
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  padding-right: 4vw;
+  color: var(--gris-pale);
+  font-size: 250%;
+}
+
+h1 div:last-of-type {
+  color: var(--jaune-fonce);
+  font-weight: 300;
+}
+
+/***************************************************************/
+/******************************** MAIN *************************/
+/***************************************************************/
+
+main {
+  width: 100%; /*je donne la totalité de l'espace du body*/
+  height: 80%;
+  /*À cause que je n'arrive pas à mettre le body à flex sans 
+  détruire mon lay out, je donne un padding left de 10% pour tricher et centrer
+  le main... */
+  padding: 4rem 10% 1rem 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/***********première balise sur 3 dans le main  ***************/
+/***********elle contient 2 titres et les paragraphes de bienvenue ***************/
+.section {
+  width: 100%;
+  height: 60vh;
+  margin-bottom: 4rem;
+
+  /*propriétés flex*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+.section .paragraphesSection {
+  height: 100%; /*80% du 90 vh donné à son parent ci-haut.*/
+  width: 100%;
+
+  /*propriétés flex*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  /*version mzzila et chrome*/
+  -moz-transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+
+  /*version mzzila et chrome*/
+  -moz-animation: animationParagraphe 5s linear infinite;
+  -webkit-animation: animationParagraphe 5s linear infinite;
+  animation: animationParagraphe 20s linear infinite;
+  overflow: hidden;
+}
+
+/* for Firefox */
+@-moz-keyframes animationParagraphe {
+  from {
+    -moz-transform: translateY(100%);
+  }
+  to {
+    -moz-transform: translateY(-100%);
+  }
+}
+
+/* for Chrome */
+@-webkit-keyframes animationParagraphe {
+  from {
+    -webkit-transform: translateY(100%);
+  }
+  to {
+    -webkit-transform: translateY(-100%);
+  }
+}
+
+@keyframes animationParagraphe {
+  from {
+    -moz-transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+  to {
+    -moz-transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+}
+
+.titresSection {
+  /*propriétés flex pour centrer les 2 titres dans leur propre valise*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.titresSection h2 {
+  padding-left: unset; /*le padding ci-dessous vient affecter ce h2*/
+}
+
+main h2 {
+  padding-left: 20%; /* trichage pour centrer ce h2 spécifique*/
+}
+
+.section p:nth-of-type(2) {
+  text-align: right;
+}
+
+/******************* deuxième div ****************/
+/******************* L'ÉQUIPE *******************/
+
+#equipe {
+  width: 100%; /* de son parent étant le main*/
+  height: auto;
+  /*propriétés flex*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /*à cause des translates, je dois mettre un margin negative. sinon
+  à la fin de tous les blocs .personnel, il y a aura un grand espace
+  entre #equipe et le asidequi suit*/
+  margin-bottom: -150px;
+}
+
+/******************* CHAQUE DIV QUI CONTIENT LE PERSONNEL *******************/
+.personnel {
+  width: 100%; /* de son parent étant #equipe*/
+  height: 20%;
+  cursor: pointer;
+  z-index: 1;
+  /*propriétés*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  /*autres propriétés*/
+  padding: 2rem 2rem 4rem 2rem;
+  border-radius: 20%;
+  background: linear-gradient(
+    -180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(68, 68, 68, 1) 100%
+  );
+
+  /*La 3d*/
+  transform: perspective(3000px) rotateY(25deg);
+
+  box-shadow: rgba(0, 0, 0, 1) 10px 35px 60px -12px;
+  transition: transform 1s ease 0s;
+}
+
+/*GESTION DES TRANSLATES, POUR QU'ILS SOIENT UN PAR DESSUS LES AUTRES*/
+
+.personnel:nth-of-type(2) {
+  z-index: 7;
+
+  transform: translateY(-50px) perspective(3000px) rotateY(25deg);
+
+  box-shadow: rgba(0, 0, 0, 1) 10px 35px 60px -12px;
+}
+
+.personnel:nth-of-type(3) {
+  z-index: 8;
+
+  transform: translateY(-100px) perspective(3000px) rotateY(25deg);
+
+  box-shadow: rgba(0, 0, 0, 1) 10px 35px 60px -12px;
+}
+
+.personnel:nth-of-type(4) {
+  z-index: 9;
+
+  transform: translateY(-150px) perspective(3000px) rotateY(25deg);
+
+  box-shadow: rgba(0, 0, 0, 1) 10px 35px 60px -12px;
+}
+
+.personnel:nth-of-type(5) {
+  z-index: 10;
+
+  transform: translateY(-180px) perspective(3000px) rotateY(25deg);
+
+  box-shadow: rgba(0, 0, 0, 1) 10px 35px 60px -12px;
+}
+
+.personnel:nth-of-type(6) {
+  z-index: 11;
+
+  transform: translateY(-220px) perspective(3000px) rotateY(25deg);
+
+  box-shadow: rgba(0, 0, 0, 1) 10px 35px 60px -12px;
+}
+
+.personnel .imageNom {
+  width: 100%;
+
+  /*propriétés flex*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.personnel img {
+  border-radius: 20%;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.5);
+  margin-right: 3%; /* la triche*/
+}
+
+h3 span {
+  color: var(--bleue-fonce);
+  font-weight: 100;
+}
+
+h3 span:last-of-type {
+  font-size: 80%;
+  font-weight: 200;
+  font-style: italic;
+}
+
+/* classe au départ pour le texte du personnel*/
+.personnelTexte {
+  display: none;
+  opacity: 0; /* ça va apparaître seulement si on click dessus*/
+  transition: opacity 1s ease;
+}
+
+/* classe que je vais toggle lorsqu'on click sur la div*/
+.personneTexteDisplay {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: var(--gris-pale);
+  padding: 1rem 0 2rem 0;
+  opacity: 1;
+}
+
+/********************************************************************/
+/***************************** FOOTER ******************************/
+/******************************************************************/
+
+.footer {
+  width: 100vw;
+  height: 40vh;
+  padding: 5% 0 5% 0;
+
+  /*propriétés flex*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  /*autres propriétés*/
+  background-image: url(../images/imageFooter.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 30% 30% 0 0;
+  box-shadow: 10px 10px 100px rgba(0, 0, 0, 1);
+}
+
+/***************************************************************/
+/***************************** LE FOOTER ***********************/
+/***************************************************************/
+
+.footer h3 {
+  /*propriétés flex*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: var(--orange);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 140%;
+}
+
+.footer h3 div:last-of-type {
+  font-weight: 300;
+  color: var(--gris-pale);
+}
+
+.footer .footerBas {
+  width: 100%;
+  /*propriétés flex*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: white;
+}
+
+.footer .footerBas a i {
+  color: white;
+  font-size: 200%;
+}
+
+/**********************************************************************
+                              MOYEN ECRAN
+***********************************************************************/
+
+@media screen and (min-width: 576px) {
+  header {
+    max-height: 645px;
+  }
+  .boutonBurger {
+    display: none;
+  }
+
+  #partieHaut {
+    align-items: flex-start;
+  }
+
+  nav {
+    flex-direction: row;
+    position: unset; /* je cancelle sa position et revient dans sa balise de départ*/
+
+    opacity: 1; /* je remets visible le nav*/
+    translate: 0; /* je remets son translate à 0*/
+  }
+
+  main h2 {
+    padding-left: 25%;
+  }
+
+  .personnel {
+    width: 80%;
+  }
+
+  .footer {
+    height: 60vh;
+  }
+}
+
+/**********************************************************************
+                  j'adapte le trichage du h2 dans le main
+***********************************************************************/
+
+@media screen and (min-width: 700px) {
+  header {
+    max-height: 650px;
+  }
+  main h2 {
+    padding-left: 30%;
+  }
+}
+
+/**********************************************************************
+                  j'adapte certains objets 
+***********************************************************************/
+
+@media screen and (min-width: 800px) {
+  header {
+    max-height: 700px;
+  }
+  .video:first-of-type {
+    display: none;
+  }
+  .video:last-of-type {
+    display: flex;
+  }
+
+  .personnel {
+    max-width: 60%;
+    min-width: 50%;
+  }
+}
+
+/**********************************************************************
+                              GRAND ÉCRAN (portable)
+***********************************************************************/
+
+@media screen and (min-width: 1000px) {
+  /*le header devient plus grand*/
+  header {
+    max-height: 750px;
+    padding-left: 5%;
+  }
+
+  #menu {
+    height: 89vh;
+    width: 95%;
+  }
+
+  /* EFFET SURVOL SUR LE LOGO*/
+  #menu img:hover {
+    scale: 120%;
+  }
+
+  /*le nav devient inline*/
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: auto;
+  }
+
+  nav ul li a {
+    /*trop gros sinon*/
+    font-size: 100%;
+    font-weight: 200;
+    position: relative;
+    padding: 0.5rem;
+  }
+
+  /* EFFET SURVOL SUR LE NAV (a)*/
+  nav ul li a::before {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+
+  nav ul li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  nav ul li a::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    inset: 0 0 0 0;
+    background-image: linear-gradient(
+      -225deg,
+      #231557 0%,
+      #44107a 29%,
+      #ff1361 67%,
+      #fff800 100%
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    z-index: -1;
+    transition: transform 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: var(--jaune-fonce);
+    font-size: 120%;
+  }
+
+  /* j'ajuste mes triches*/
+  main {
+    padding: 4rem 5% 1rem 5%;
+  }
+
+  /* j'ajuste mes triches*/
+  main h2 {
+    padding-left: 35%;
+  }
+
+  .section {
+    height: 50vh;
+  }
+
+  /* Les paragraphes devient 3 colonnes*/
+  .section .paragraphesSection {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .section p:nth-of-type(2) {
+    text-align: left;
+  }
+
+  /* La partie avec le personnel devient aussi des row*/
+  #equipe {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    margin-bottom: 5rem;
+    justify-content: space-between;
+  }
+
+  .personnel {
+    width: 48%;
+    transition: transform 1s ease, box-shadow 1s ease;
+  }
+
+  /* je reajuste leur translate*/
+  .personnel:nth-of-type(2) {
+    z-index: 7;
+    transform: translateY(10px) perspective(3000px) rotateY(-25deg);
+  }
+
+  .personnel:nth-of-type(3) {
+    z-index: 8;
+    transform: translateY(-60px) perspective(3000px) rotateY(25deg);
+  }
+
+  .personnel:nth-of-type(4) {
+    z-index: 9;
+    transform: translateY(-60px) perspective(3000px) rotateY(-25deg);
+  }
+
+  .personnel:nth-of-type(5) {
+    z-index: 10;
+    transform: translateY(-110px) perspective(3000px) rotateY(25deg);
+  }
+
+  .personnel:nth-of-type(6) {
+    z-index: 10;
+    transform: translateY(-110px) perspective(3000px) rotateY(-25deg);
+  }
+
+  /******************* EFFET DE SURVOL SUR LE PERSONNEL ************/
+
+  /* Je dois le faire un par un omg*/
+
+  .personnel:hover,
+  .personnel:nth-of-type(2):hover {
+    transform: translateY(calc(-30px));
+    box-shadow: rgba(0, 0, 0, 0.5) 10px 35px 60px -12px;
+  }
+
+  .personnel:nth-of-type(3):hover,
+  .personnel:nth-of-type(4):hover {
+    transform: translateY(calc(-100px));
+    box-shadow: rgba(0, 0, 0, 0.5) 10px 35px 60px -12px;
+  }
+
+  .personnel:nth-of-type(5):hover,
+  .personnel:nth-of-type(6):hover {
+    transform: translateY(calc(-150px));
+    box-shadow: rgba(0, 0, 0, 0.5) 10px 35px 60px -12px;
+  }
+
+  .personnel:hover {
+    transform: perspective(3000px) rotateY(5deg);
+    box-shadow: rgba(0, 0, 0, 0.5) 10px 35px 60px -12px;
+  }
+
+  /*footer plus grand*/
+  .footer {
+    height: 60vh;
+    position: relative;
+  }
+
+  .footer:hover::after {
+    content: "NOUS EMBAUCHONS!";
+    top: -15%;
+    left: 35%;
+    position: absolute;
+    color: #ff1361;
+    font-weight: 300;
+    font-family: "Roboto", sans-serif;
+    font-size: 200%;
+  }
+}
+
+.footer .footerBas a i {
+  transition: color 1s ease, scale 1s ease;
+}
+
+.footer .footerBas a i:hover {
+  color: var(--orange);
+  scale: 200%;
+}
+
+/**********************************************************************
+                              TRÈS GRAND ÉCRAN ( Desktop)
+***********************************************************************/
+@media screen and (min-width: 1400px) {
+  #partieHaut {
+    margin-top: 2rem;
+  }
+
+  #menu img:hover {
+    scale: 140%;
+  }
+
+  nav ul li a {
+    font-size: 120%;
+  }
+
+  nav ul li a:hover {
+    font-size: 140%;
+  }
+
+  main h2 {
+    padding-left: 40%;
+  }
+
+  .personnel {
+    width: 40%;
+  }
+
+  .footer {
+    height: 70vh;
+  }
+
+  footer:hover::after {
+    left: 50%;
+  }
+}
